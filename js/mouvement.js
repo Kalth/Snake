@@ -69,7 +69,7 @@ function calcMvt() {
 	} else if (varsGlobal.dirSnake == 4 
 		&& (varsGlobal.pos + varsGlobal.dimArea[0]) < (varsGlobal.dimArea[0] * varsGlobal.dimArea[1])) {
 		// Bas
-		posValide += varsGlobal.dimArea[0];
+		posValide += varsGlobal.dimcArea[0];
 	} else if (varsGlobal.dirSnake == 4 
 		&& (varsGlobal.pos + varsGlobal.dimArea[0]) >= (varsGlobal.dimArea[0] * varsGlobal.dimArea[1])) {
 		// Part du bord bas et arrive au bord haut

@@ -1,12 +1,12 @@
-var varsGlobal = new Object(); // renomer en app
+var game;
 
-document.addEventListener('DOMContentLoaded', function() {
-	varsGlobal.isRunning = false; // Une parti est elle lancé?
-
+(function() {
 	document.getElementById('newGame').addEventListener('click', function() {
-		if (varsGlobal.isRunning == true) {
-			gameOver();
+		if (game.getIsRunning == true) {
+			game.gameOver();
 		}
-		initGame();
+		var x = parseInt(window.prompt('Combien de colonnes?'));
+		var y = parseInt(window.prompt('Combien de lignes?'));
+		game = new Game(x, y);
 	});
-})
+})();
