@@ -71,24 +71,71 @@ var Game = function(x ,y) {
 		}
 	};
 
+	this.getSnake = function() {
+		return snake;
+	};
+
 	// Initialisation
 	this.setIsRunning(true);
 	this.setDimArea([x,y]);
 	this.creatArea();
-	snake = new Snake(rand(setDimArea[0] * setDimArea[1]));
+	snake = new Snake(rand(this.getDimArea[0] * this.getDimArea[1]));
 	document.body.addEventListener('keydown',game.snake.choixDir);
 
 	// Methode perso
 	this.creatArea = function() {
 		var area;
 		// Crée le quadrillage selon la taille demandé
-		for (var i = dimArea[1] ; i > 0 ; i--) {
+		for (var i = this.getDimArea()[1] ; i > 0 ; i--) {
 			area += '<div class=\'row\'>';
-			for (var j = dimArea[0] ; j > 0 ; j--) {
+			for (var j = this.getDimArea()[0] ; j > 0 ; j--) {
 				area += '<div class=\'col\'></div>';
 			}
 			area += '</div>';
 		}
 		document.getElementById('map-container').innerHTML = area;
+	};
+
+	this.scorePlus = function(pts) {
+		var affSco = document.getElementById('score');
+		this.addScore();
+		affSco.innerHTML = this.getScore() + ' pts';
+		this.appaPoint();
+		// En cas de super Point le serpent accelere
+		if (pts == 5) {
+			augVitesse();
+		}
+		// Si le score attein le palier diffSco le serpent accelere et le palier est augmenté
+		if (this.getScore() >= this.getDiffScore()) {
+			// a revoir!!!!!!!!!!
+			varsGlobal.diffSco += varsGlobal.diffSco + varsGlobal.sco / 2;
+			augVitesse();
+		}
+	};
+
+	this.appaPoint = function() {
+		var randPosiAppPoint;
+		var attrCaseAppPoint;
+		if (game.snake.getTabPos().length <= 5 
+		|| this.getSuperPointTimer() === true) {
+			var randSPoint = 1;
+		} else {
+			var randSPoint = rand(10);
+		}
+		while(true) {
+			randPosiAppPoint = rand(varsGlobal.dimArea[0] * varsGlobal.dimArea[1] - 1);
+			attrCaseAppPoint = document.getElementsByClassName('col')[randPosiAppPoint].getAttribute('class');
+			if (attrCaseAppPoint === 'col' 
+				&& randSPoint <= 9) {
+				document.getElementsByClassName('col')[randPosiAppPoint].setAttribute('class', 'col point');
+				break;
+			} else if (attrCaseAppPoint === 'col'
+				&& randSPoint === 10) {
+				document.getElementsByClassName('col')[randPosiAppPoint].setAttribute('class', 'col sPoint');
+				this.setSuperPointTimer(true);
+				setTimeout(timerSPoint(randPosiAppPoint),10000);
+				break;
+			}
+		}
 	};
 }

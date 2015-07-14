@@ -1,0 +1,512 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pos",
+				"posCollones"
+			],
+			[
+				"ba",
+				"backgroundCollonnes"
+			],
+			[
+				"hei",
+				"heigth"
+			],
+			[
+				"bac",
+				"xBackground"
+			],
+			[
+				"for",
+				"for	for (…) {…}"
+			],
+			[
+				"he",
+				"height"
+			],
+			[
+				"can",
+				"canvasSize"
+			],
+			[
+				"dra",
+				"drawImage"
+			],
+			[
+				"c",
+				"ctx"
+			],
+			[
+				"im",
+				"imgPiece"
+			],
+			[
+				"hea",
+				"heart"
+			],
+			[
+				"li",
+				"link"
+			],
+			[
+				"lin",
+				"linkHitBox"
+			],
+			[
+				"fl",
+				"flyingHearth"
+			],
+			[
+				"is",
+				"isAllowToMove"
+			],
+			[
+				"i",
+				"if	if"
+			],
+			[
+				"re",
+				"refreshTickIdle"
+			],
+			[
+				"l",
+				"link"
+			],
+			[
+				"va",
+				"val"
+			],
+			[
+				"res",
+				"result"
+			],
+			[
+				"bo",
+				"border"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"n",
+				"nbr"
+			],
+			[
+				"d",
+				"diceVal"
+			],
+			[
+				"jet",
+				"jetDeDes"
+			],
+			[
+				"fo",
+				"for	for (…) {…}"
+			],
+			[
+				"tes",
+				"test"
+			],
+			[
+				"v",
+				"val"
+			],
+			[
+				"la",
+				"laPlanque"
+			],
+			[
+				"type",
+				"typeLouche"
+			],
+			[
+				"set",
+				"setTimeout"
+			],
+			[
+				"getA",
+				"getIsAlive"
+			],
+			[
+				"ge",
+				"getPrenom"
+			],
+			[
+				"get",
+				"getArme"
+			],
+			[
+				"ar",
+				"arsenal"
+			],
+			[
+				"geta",
+				"getIsAlive"
+			],
+			[
+				"fi",
+				"function"
+			],
+			[
+				"co",
+				"console"
+			],
+			[
+				"se",
+				"setIsAlive"
+			],
+			[
+				"r",
+				"risque"
+			],
+			[
+				"t",
+				"this"
+			],
+			[
+				"put",
+				"putesARecolter"
+			],
+			[
+				"f",
+				"function"
+			],
+			[
+				"error",
+				"error_reporting"
+			],
+			[
+				"ta",
+				"tabPosi"
+			],
+			[
+				"lo",
+				"longCrois"
+			],
+			[
+				"posi",
+				"posiApp"
+			],
+			[
+				"po",
+				"posiApp"
+			],
+			[
+				"tab",
+				"tabIncu"
+			],
+			[
+				"Pt",
+				"pTQ2"
+			],
+			[
+				"pt",
+				"pTQ"
+			],
+			[
+				"PT",
+				"pTQ2"
+			],
+			[
+				"rgb",
+				"rgba()"
+			],
+			[
+				"in",
+				"input	Tag"
+			],
+			[
+				"inl",
+				"inline-block"
+			],
+			[
+				"ma",
+				"margin"
+			],
+			[
+				"bod",
+				"border"
+			],
+			[
+				"marg",
+				"margin"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"border",
+				"border-radius"
+			],
+			[
+				"margi",
+				"margin"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"op",
+				"option	Tag"
+			],
+			[
+				"ch",
+				"childNodes"
+			],
+			[
+				"node",
+				"childNodes"
+			],
+			[
+				"html",
+				"htmlTag"
+			],
+			[
+				"e",
+				"else"
+			],
+			[
+				"le",
+				"length"
+			],
+			[
+				"x",
+				"x-1"
+			],
+			[
+				"htm",
+				"htmlTag"
+			],
+			[
+				"fun",
+				"function"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"package lint",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 216.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/kalth/sites/git/dossierSites/Dev/Java script/jeuxCanvas/index.html",
+		"/home/kalth/file",
+		"/home/kalth/sites/git/dossierSites/Dev/Java script/jeuxCanvas/css/game.css",
+		"/home/kalth/sites/git/dossierSites/Dev/Java script/jeuxCanvas/js/utilities.js",
+		"/home/kalth/sites/git/dossierSites/Dev/Java script/jeuxCanvas/js/character.js",
+		"/home/kalth/sites/git/dossierSites/Dev/Java script/jeuxCanvas/js/event.js",
+		"/home/kalth/sites/feuillesRecaJDR/jdr.js",
+		"/home/kalth/sites/git/dossierSites/Dev/Java script/jeuxCanvas/js/mob.js",
+		"/home/kalth/sites/git/dossierSites/Dev/Java script/jeuxCanvas/js/map.js",
+		"/home/kalth/sites/git/dossierSites/Dev/Java script/jeuxCanvas/js/const.js",
+		"/home/kalth/sites/git/dossierSites/Dev/Java script/jeuxCanvas/js/app.js",
+		"/home/kalth/sites/git/dossierSites/Dev/Java script/jquery/j1/divQuiBouge/divMouve.js",
+		"/home/kalth/sites/feuillesRecaJDR/jdr.html",
+		"/home/kalth/sites/git/dossierSites/Dev/Java script/Exo orienté objet/main.js",
+		"/home/kalth/sites/feuillesRecaJDR/jdr.css",
+		"/home/kalth/sites/git/dossierSites/Dev/Java script/Exo orienté objet/catin.js",
+		"/home/kalth/sites/git/dossierSites/Dev/Java script/Exo orienté objet/planque.js",
+		"/home/kalth/sites/git/dossierSites/Dev/Java script/Exo orienté objet/mob.js",
+		"/home/kalth/sites/git/dossierSites/Dev/Java script/Exo orienté objet/mac.js",
+		"/home/kalth/sites/git/dossierSites/Dev/Java script/Exo orienté objet/index.html",
+		"/home/kalth/Projets/feuillesRecaJDR/jdr.js",
+		"/home/kalth/Projets/feuillesRecaJDR/jdr.html",
+		"/home/kalth/sites/git/dossierSites/Dev/Java script/snake/snakeVD.js",
+		"/home/kalth/sites/git/dossierSites/Dev/Java script/snake VP/snake.js",
+		"/home/kalth/sites/git/dossierSites/Dev/Php/navigateur de fichier/web/js/directory.js",
+		"/home/kalth/sites/git/Dev/Php/navigateur de fichier/views/directory.html.twig",
+		"/home/kalth/sites/git/.gitignore",
+		"/home/kalth/sites/git/Dev/Php/Session/index.php",
+		"/home/kalth/sites/git/Dev/Php/objet/personnage.php",
+		"/etc/php5/apache2/php.ini",
+		"/home/kalth/sites/git/Dev/Php/Session/cli.php",
+		"/home/kalth/sites/git/Dev/Php/Session/texte.txt",
+		"/home/kalth/sites/git/Dev/Php/Session/liste.phtml",
+		"/home/kalth/sites/git/Dev/Php/Session/create.phtml",
+		"/home/kalth/sites/snake/snakeVD.js",
+		"/home/kalth/sites/snake/snake.css",
+		"/home/kalth/sites/snake/index.html",
+		"/home/kalth/sites/snake/mainS2.js",
+		"/home/kalth/sites/3wa/Dev/Java script/color/index.html",
+		"/home/kalth/sites/3wa/Dev/Java script/color/mainS.js",
+		"/home/kalth/sites/3wa/Dev/Java script/color/mainS2.js",
+		"/home/kalth/sites/3wa/Dev/Java script/J3/CorrectionWonder.js",
+		"/home/kalth/sites/3wa/Dev/Java script/J3/reservation.css",
+		"/home/kalth/sites/3wa/Dev/Java script/J3/wonder.html",
+		"/home/kalth/sites/3wa/Dev/Java script/J3/Reservation.html",
+		"/home/kalth/sites/3wa/Dev/Java script/J3/wonder.js",
+		"/home/kalth/sites/3wa/Dev/Java script/J3/MemoWonder.js",
+		"/home/kalth/sites/3wa/Dev/Java script/J3/wonder2.js",
+		"/home/kalth/sites/3wa/Dev/Java script/J3/wonder3.js",
+		"/etc/apache2/apache2.conf",
+		"/etc/apache2/magic",
+		"/etc/apache2/sites-available/000-default.conf",
+		"/home/kalth/sites/index.html",
+		"/etc/apache2/sites-enabled/000-default.conf"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"drawSh",
+			"drawPlatforme",
+			"partPlatforme",
+			"call",
+			"time",
+			"remove",
+			"console.log",
+			"	);",
+			"getPrenom",
+			"rando",
+			"rand",
+			"ran",
+			"trotoir",
+			"sPoint",
+			"posiNaiss",
+			"user",
+			"right",
+			"console.log",
+			"k",
+			"g",
+			"tab[x]",
+			"z"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 44.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				0,
+				1,
+				1,
+				2
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			0.677412740539,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.unsaved_changes":
+	{
+		"height": 102.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 205.0,
+	"status_bar_visible": true
+}

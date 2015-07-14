@@ -22,6 +22,13 @@ var Snake = function(firstPos, argVitMvt) {
 		}
 	};
 
+	this.setIndexTabPos = function(index, value) {
+		if (typeof index === 'number'
+		&& typeof value === 'number') {
+			tabPos[index] = value;
+		}
+	};
+
 	this.pushTabPos = function(newPart) {
 		if (typeof newPart === 'number') {
 			tabPos.push(newPart);
@@ -52,6 +59,13 @@ var Snake = function(firstPos, argVitMvt) {
 
 	this.getIndexTabIncu = function(value) {
 		return tabIncu.indexOf(value);
+	};
+
+	this.setIndexTabIncu = function(index, value) {
+		if (typeof index === 'number'
+		&& typeof value === 'number') {
+			tabIncu[index] = value;
+		}
 	};
 
 	this.pushTabIncu = function(newBirth) {
@@ -111,23 +125,115 @@ var Snake = function(firstPos, argVitMvt) {
 	};
 
 	this.calcMvt = function() {
-		var diff == (this.getDirSnake() - ( 2 + this.getDirSnake() % 2));
-		if (isEven(this.getDirSnake())) {
-			var posVoulu = this.getTabPos()[0] + (game.dimArea[0]) * diff;
-		} else {
-			var posVoulu = this.getTabPos()[0] + diff;
+		// Si dir = 1 || 2 => diff = -1 sinon => diff = 1
+		var diff = this.getDirSnake() - (2 + ((this.getDirSnake() + 1) % 2));
+		var posVoulu = this.getTabPos()[0] + game.dimArea[0] / (game.dimArea[0] * (this.getDirSnake() % 2) + 1 * ((this.getDirSnake() + 1) % 2)) * diff;
+		// Si le snake depasse des bord du terrain on corrige la position
+		if (posVoulu < 0
+		|| posVoulu >= game.dimArea[0] * game.dimArea[1]
+		|| Math.floor(posVoulu / game.dimArea[0]) !== Math.floor(this.getTabPos / game.dimArea[0])) {
+			// Si dir = 2 || 4 => y = game.getDimArea()[1] sinon => y = 1
+			var y = ( this.getDirSnake() % 2 ) * ( 1 - game.getDimArea()[1] ) + game.getDimArea()[1]; 
+			posVoulu = this.getTabPos()[0] + ((game.getDimArea()[0] * y) - y) * ( -diff) + diff * ((this.getDirSnake() + 1) % 2);
 		}
-		this.calcPos(posVoulu);
+		this.mouvement(posVoulu);
 	};
 
-	this.calcPos = function(posVoulu) {
-		var diff == (this.getDirSnake() - ( 2 + this.getDirSnake() % 2));
-		var x = game.getDimArea()[0];
-		var y = ( this.getDirSnake() % 2 ) * ( 1 - game.getDimArea()[1] ) + game.getDimArea()[1]; // si Haut ou bas = dimeArea[1] si gauche ou droite = 1
-		if (posVoulu < 0
-			|| posVoulu > x * y){
-			// Si 
-			return this.getTabPos()[0] + (( x * y ) - y ) * (-diff);
+	this.mouvement = function(posValide) {
+		var majScore = 0;
+		var attrPosValide = document.getElementsByClassName('col')[posValide].getAttribute('class');
+		var posLastPart = this.getTabPos()[this.getTabPos().length - 1];
+
+		this.addNbrePas();
+		// Verifie où le snake arrive
+		if (attrPosValide == 'col point') {
+			majScore = 1;
+		} else if (attrPosValide == 'col sPoint') {
+			majScore = 5;
 		}
-	}
-}
+		if (majScore !== 0) {
+			game.scorePlus(majScore);
+		}
+
+		var naissImmi = this.croissance(majScore);
+		if ((attrPosValide  === 'col queue') 
+		&& ((posValide === posLastPart && naissImmi == true)
+		|| (posValide !== posLastPart))) {
+			// Le gameOver ne se declenche pas si il touche le bout de la queue et qu'elle ne doit pas grandir a ce pas
+			game.gameOver();
+			return;
+		}
+		if (naissImmi === true) {
+			// Si une partie doit apparaitre, sauvgarde la derniere position de la queue avant la mise a jour
+			var posNaiss = this.getTabPos()[this.getTabPos().length - 1];
+		}
+		// Amene la tete a la position valide
+		var attrTete = document.getElementsByClassName('col')[this.getTabPos()[0]].getAttribute('class');
+		document.getElementsByClassName('col')[posValide].setAttribute('class', attrTete);
+		document.getElementsByClassName('col')[this.getTabPos()[0]].setAttribute('class', 'col');
+		for (var i = this.getTabPos().length - 1; i > 0; --i) {
+			if (i === this.getTabPos().length - 1 && posValide !== this.getTabPos()[i]) {
+				document.getElementsByClassName('col')[this.getTabPos()[i]].setAttribute('class', 'col');
+			}
+			// Mise a jour des position de la queue
+			if (i === 1) {
+				this.setIndexTabIncu(i, this.getTabPos()[0]);
+				// Avance la premiere occurence de la queue
+				document.getElementsByClassName('col')[this.getTabPos()[i]].setAttribute('class', 'col queue');
+			} else {
+				this.setIndexTabIncu(i, this.getTabPos()[i - 1]);
+			}
+		}
+
+		if (naissImmi === true) {
+			this.pushTabPos(posNaiss);
+			document.getElementsByClassName('col')[posNaiss].setAttribute('class', 'col queue');
+		}
+
+		this.setIndexTabPos(0, posValide); 
+		this.timingMvt();
+	};
+
+	// Croissance
+	this.croissance = function(majScore) {
+		var naissImmi = false;
+		// Si majScore === 1 on prepare une naissance
+		if (majScore === 1) {
+			var nbrePartSup = 0; // Nombre de partie en attente d'ajout du serpent
+			for (var i = this.getTabPos().length - 1; i >= 0; i--) {
+				if (this.getTabPos()[i] !== 0) {
+					++nbrePartSup;
+				}
+			}
+			/* Boucle surment a corriger */
+			while(true) {
+				// Trouve une instance du tableaux disponible pour marquer la date d'ajout de la partie suplementaire
+				if(this.getIndexTabIncu(i) === undefined) {
+					this.pushTabIncu(this.getNbrePas() + this.getTabPos.length + nbrePartSup);
+					break;
+				} else if (this.getIndexTabIncu(i) == 0) {
+					this.setIndexTabIncu(i, this.getNbrePas() + this.getTabPos.length + nbrePartSup);
+					break;
+				} else {
+					i++;
+				}
+			}
+		// Reduction en cas de super Point manger
+		} else if (majScore === 5) {
+			// Enleve du bout jusqu'au 3/4 la queue du serpent
+			for (var i = this.getTabPos().length - 1; i >= Math.round(this.getTabPos().length * (3 / 4)); i--) {
+				document.getElementsByClassName('col')[this.getTabPos()[i]].setAttribute('class', 'col');
+				this.popTabPos();
+			}
+		}
+		for (var i = 0; i <= this.getTabPos().length - 1; i++) {
+			// Verifi si une partie doit etre ajouter a ce tour
+			if (this.getTabPos()[i] === this.getNbrePas()) {
+				naissImmi = true;
+				this.resetIndexTabIncu(i);
+				break;
+			}
+		}
+		return naissImmi;
+	};
+};
