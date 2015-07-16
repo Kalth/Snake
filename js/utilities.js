@@ -2,7 +2,7 @@
 
 function rand(max) {
 	if (typeof max === 'number') {
-		return Math.floor(Math.random() * (max + 1);
+		return Math.floor(Math.random() * (max + 1));
 	}
 }
 

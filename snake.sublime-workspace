@@ -5,7 +5,67 @@
 		[
 			[
 				"pos",
-				"posCollones"
+				"posNaiss"
+			],
+			[
+				"pus",
+				"pushTabPos"
+			],
+			[
+				"posi",
+				"posNaiss"
+			],
+			[
+				"nai",
+				"naissance"
+			],
+			[
+				"sein",
+				"setIndexTabPos"
+			],
+			[
+				"re",
+				"resetIndexTabIncu"
+			],
+			[
+				"t",
+				"this"
+			],
+			[
+				"pop",
+				"popTabPos"
+			],
+			[
+				"getT",
+				"getTabPos"
+			],
+			[
+				"va",
+				"value"
+			],
+			[
+				"ge",
+				"getTabPos"
+			],
+			[
+				"get",
+				"getNbrePas"
+			],
+			[
+				"s",
+				"snake"
+			],
+			[
+				"var",
+				"variLength"
+			],
+			[
+				"po",
+				"posVoulu"
+			],
+			[
+				"posV",
+				"posVoulu"
 			],
 			[
 				"ba",
@@ -68,16 +128,8 @@
 				"if	if"
 			],
 			[
-				"re",
-				"refreshTickIdle"
-			],
-			[
 				"l",
 				"link"
-			],
-			[
-				"va",
-				"val"
 			],
 			[
 				"res",
@@ -132,14 +184,6 @@
 				"getIsAlive"
 			],
 			[
-				"ge",
-				"getPrenom"
-			],
-			[
-				"get",
-				"getArme"
-			],
-			[
 				"ar",
 				"arsenal"
 			],
@@ -164,10 +208,6 @@
 				"risque"
 			],
 			[
-				"t",
-				"this"
-			],
-			[
 				"put",
 				"putesARecolter"
 			],
@@ -186,14 +226,6 @@
 			[
 				"lo",
 				"longCrois"
-			],
-			[
-				"posi",
-				"posiApp"
-			],
-			[
-				"po",
-				"posiApp"
 			],
 			[
 				"tab",
@@ -291,6 +323,46 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "js/game.js",
+			"settings":
+			{
+				"buffer_size": 3579,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/snake.js",
+			"settings":
+			{
+				"buffer_size": 7233,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "console.log('pouet');\nfor (var i = 1; i < 5; i++) {\n	console.log(i);\n	console.log(i - (2 + ((i+1) % 2)));\n};\n\nvar posVoulu;\nvar X = 5;\nvar Y = 7;\nvar posValide = 9;\nvar dir = 3;\nvar diff = dir - (2 + ((dir + 1) % 2);\nvar x = X;\nvar y = ( dir % 2 ) * ( 1 - Y ) + Y; \nposVoulu = posValide + ((x * y) - y) * ( -diff);\nconsole.log(posVoulu);\nif (posVoulu < 0\n	|| posVoulu > x * y){\n	// Si \n	return posValide + ((x * y) - y) * ( -diff);\n}",
+			"settings":
+			{
+				"buffer_size": 433,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/kalth/sites/git/dossierSites/Dev/Java script/jeuxCanvas/js/utilities.js",
+			"settings":
+			{
+				"buffer_size": 385,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/utilities.js",
+			"settings":
+			{
+				"buffer_size": 385,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -320,8 +392,9 @@
 	},
 	"file_history":
 	[
-		"/home/kalth/sites/git/dossierSites/Dev/Java script/jeuxCanvas/index.html",
 		"/home/kalth/file",
+		"/home/kalth/sites/git/dossierSites/Dev/Java script/snake/snakeVD.js",
+		"/home/kalth/sites/git/dossierSites/Dev/Java script/jeuxCanvas/index.html",
 		"/home/kalth/sites/git/dossierSites/Dev/Java script/jeuxCanvas/css/game.css",
 		"/home/kalth/sites/git/dossierSites/Dev/Java script/jeuxCanvas/js/utilities.js",
 		"/home/kalth/sites/git/dossierSites/Dev/Java script/jeuxCanvas/js/character.js",
@@ -342,7 +415,6 @@
 		"/home/kalth/sites/git/dossierSites/Dev/Java script/Exo orienté objet/index.html",
 		"/home/kalth/Projets/feuillesRecaJDR/jdr.js",
 		"/home/kalth/Projets/feuillesRecaJDR/jdr.html",
-		"/home/kalth/sites/git/dossierSites/Dev/Java script/snake/snakeVD.js",
 		"/home/kalth/sites/git/dossierSites/Dev/Java script/snake VP/snake.js",
 		"/home/kalth/sites/git/dossierSites/Dev/Php/navigateur de fichier/web/js/directory.js",
 		"/home/kalth/sites/git/Dev/Php/navigateur de fichier/views/directory.html.twig",
@@ -377,7 +449,7 @@
 	],
 	"find":
 	{
-		"height": 38.0
+		"height": 48.0
 	},
 	"find_in_files":
 	{
@@ -388,9 +460,24 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": false,
+		"case_sensitive": true,
 		"find_history":
 		[
+			"Math.round(Math.random() * ",
+			"varsGlobal.tabPosi[i]",
+			"varsGlobal.tabPosi.length",
+			"m",
+			"setIndexTabIncu",
+			"pushTabIncu",
+			"snake.pushTabIncu",
+			"varsGlobal.tabIncu.push",
+			"getIndexTabIncu",
+			"this.getTabIncu()[i]",
+			"this.getTabIncu",
+			"varsGlobal.tabIncu[i]",
+			"game.getDimArea()[1]",
+			"game.getDimArea()[0]",
+			"this.getDirSnake()",
 			"drawSh",
 			"drawPlatforme",
 			"partPlatforme",
@@ -420,6 +507,13 @@
 		"regex": false,
 		"replace_history":
 		[
+			"rand(",
+			"this.setIndexTabIncu(i ,)",
+			"this.getTabPos()[i]",
+			"this.getTabPos().length",
+			"snake.pushTabIncu",
+			"this.getIndexTabIncu(i)",
+			"this.getTabIncu()[i]"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -430,13 +524,140 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
-			]
-		},
-		{
-			"sheets":
-			[
+				{
+					"buffer": 0,
+					"file": "js/game.js",
+					"settings":
+					{
+						"buffer_size": 3579,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3298,
+								3298
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 680.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "js/snake.js",
+					"settings":
+					{
+						"buffer_size": 7233,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7229,
+								7229
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 7008.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"settings":
+					{
+						"buffer_size": 433,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								105,
+								105
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/kalth/sites/git/dossierSites/Dev/Java script/jeuxCanvas/js/utilities.js",
+					"settings":
+					{
+						"buffer_size": 385,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								126,
+								126
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "js/utilities.js",
+					"settings":
+					{
+						"buffer_size": 385,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								82,
+								82
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -457,12 +678,6 @@
 				0,
 				1,
 				1
-			],
-			[
-				0,
-				1,
-				1,
-				2
 			]
 		],
 		"cols":
@@ -473,7 +688,6 @@
 		"rows":
 		[
 			0.0,
-			0.677412740539,
 			1.0
 		]
 	},
@@ -484,7 +698,7 @@
 	},
 	"replace":
 	{
-		"height": 64.0
+		"height": 94.0
 	},
 	"save_all_on_build": true,
 	"select_file":

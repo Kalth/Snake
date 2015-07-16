@@ -100,14 +100,20 @@ var Snake = function(firstPos, argVitMvt) {
 		}
 	};
 
-	// Constructeur
-	this.pushTabPos(firstPos);
-	if (typeof argVitMvt === 'number') {
-		this.setVitMvt(argVitMvt);
-	}
-
+	console.log(this);
 	// Methodes perso
 	// Temps avant le prochain deplacement
+	this.choixDir = function(event) {
+		console.log(game.getSnake());
+		if (game.getIsPlaying() === false) {
+			game.getSnake().timingMvt();
+			game.setIsPlaying(true);
+		}
+		game.getSnake().setDirSnake(event.which - 36);
+		console.log(game.getSnake().getTabPos());
+		document.getElementsByClassName('col')[game.getSnake().getTabPos()[0]].setAttribute('class', 'col actif d' + game.getSnake().getDirSnake());
+	};
+
 	this.timingMvt = function() {
 		var _this = this;
 		setTimeout(function() {
@@ -115,23 +121,14 @@ var Snake = function(firstPos, argVitMvt) {
 		}, this.vitMvt);
 	};
 
-	this.choixDir = function(event) {
-		if (game.getIsPlaying() === false) {
-			this.timingMvt();
-			game.setIsPlaying(true);
-		}
-		this.setDirSnake(event.which - 36);
-		document.getElementsByClassName('col')[varsGlobal.pos].setAttribute('class', 'col actif d' + this.getDirSnake());
-	};
-
 	this.calcMvt = function() {
 		// Si dir = 1 || 2 => diff = -1 sinon => diff = 1
 		var diff = this.getDirSnake() - (2 + ((this.getDirSnake() + 1) % 2));
-		var posVoulu = this.getTabPos()[0] + game.dimArea[0] / (game.dimArea[0] * (this.getDirSnake() % 2) + 1 * ((this.getDirSnake() + 1) % 2)) * diff;
+		var posVoulu = this.getTabPos()[0] + game.getDimArea()[0] / (game.getDimArea()[0] * (this.getDirSnake() % 2) + 1 * ((this.getDirSnake() + 1) % 2)) * diff;
 		// Si le snake depasse des bord du terrain on corrige la position
 		if (posVoulu < 0
-		|| posVoulu >= game.dimArea[0] * game.dimArea[1]
-		|| Math.floor(posVoulu / game.dimArea[0]) !== Math.floor(this.getTabPos / game.dimArea[0])) {
+		|| posVoulu >= game.getDimArea()[0] * game.getDimArea()[1]
+		|| Math.floor(posVoulu / game.getDimArea()[0]) !== Math.floor(this.getTabPos() / game.getDimArea()[0])) {
 			// Si dir = 2 || 4 => y = game.getDimArea()[1] sinon => y = 1
 			var y = ( this.getDirSnake() % 2 ) * ( 1 - game.getDimArea()[1] ) + game.getDimArea()[1]; 
 			posVoulu = this.getTabPos()[0] + ((game.getDimArea()[0] * y) - y) * ( -diff) + diff * ((this.getDirSnake() + 1) % 2);
@@ -141,6 +138,7 @@ var Snake = function(firstPos, argVitMvt) {
 
 	this.mouvement = function(posValide) {
 		var majScore = 0;
+		console.log(posValide);
 		var attrPosValide = document.getElementsByClassName('col')[posValide].getAttribute('class');
 		var posLastPart = this.getTabPos()[this.getTabPos().length - 1];
 
@@ -236,4 +234,12 @@ var Snake = function(firstPos, argVitMvt) {
 		}
 		return naissImmi;
 	};
+
+	// Constructeur
+	console.log(firstPos);
+	this.pushTabPos(firstPos);
+	if (typeof argVitMvt === 'number') {
+		this.setVitMvt(argVitMvt);
+	}
+
 };

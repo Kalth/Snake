@@ -17,6 +17,7 @@ var Game = function(x ,y) {
 			&& typeof newDimArea[1] === 'number') {
 			dimArea = newDimArea;
 		} else {
+			console.log('dim area set par defaut');
 			dimArea = [10, 10];
 		}
 	};
@@ -75,16 +76,9 @@ var Game = function(x ,y) {
 		return snake;
 	};
 
-	// Initialisation
-	this.setIsRunning(true);
-	this.setDimArea([x,y]);
-	this.creatArea();
-	snake = new Snake(rand(this.getDimArea[0] * this.getDimArea[1]));
-	document.body.addEventListener('keydown',game.snake.choixDir);
-
 	// Methode perso
 	this.creatArea = function() {
-		var area;
+		var area ='';
 		// Crée le quadrillage selon la taille demandé
 		for (var i = this.getDimArea()[1] ; i > 0 ; i--) {
 			area += '<div class=\'row\'>';
@@ -116,14 +110,19 @@ var Game = function(x ,y) {
 	this.appaPoint = function() {
 		var randPosiAppPoint;
 		var attrCaseAppPoint;
-		if (game.snake.getTabPos().length <= 5 
+		if (this.getSnake().getTabPos().length <= 5 
 		|| this.getSuperPointTimer() === true) {
 			var randSPoint = 1;
 		} else {
 			var randSPoint = rand(10);
 		}
 		while(true) {
-			randPosiAppPoint = rand(varsGlobal.dimArea[0] * varsGlobal.dimArea[1] - 1);
+			randPosiAppPoint = rand(this.getDimArea()[0] * this.getDimArea()[1] - 1);
+			console.log(randPosiAppPoint);
+			console.log(rand(this.getDimArea[0] * this.getDimArea[1] - 1));
+			console.log(document.getElementsByClassName('col').length);
+			console.log('x : ' + this.getDimArea + ' y : ' + this.getDimArea[1])
+			console.log(document.getElementsByClassName('col')[randPosiAppPoint]);
 			attrCaseAppPoint = document.getElementsByClassName('col')[randPosiAppPoint].getAttribute('class');
 			if (attrCaseAppPoint === 'col' 
 				&& randSPoint <= 9) {
@@ -133,9 +132,29 @@ var Game = function(x ,y) {
 				&& randSPoint === 10) {
 				document.getElementsByClassName('col')[randPosiAppPoint].setAttribute('class', 'col sPoint');
 				this.setSuperPointTimer(true);
-				setTimeout(timerSPoint(randPosiAppPoint),10000);
+				var _this = this;
+				setTimeout(_this.timerSPoint(randPosiAppPoint),10000);
 				break;
 			}
 		}
 	};
+
+	// Au bout de 10 seconde supprime le superPoint si il n'est pas pris, et permet al réapparition d'un nouveaux
+	this.timerSPoint = function(posiSuperPoint) {
+		this.setSuperPointTimer(false);
+		if (document.getElementsByClassName('col')[posiSuperPoint].getAttribute('class') === 'col sPoint') {
+			document.getElementsByClassName('col')[randPosiAppPoint].setAttribute('class', 'col');
+			this.appaPoint();
+		}
+		return;
+	};
+
+	// Initialisation
+	this.setIsRunning(true);
+	console.log(x + ' ' + y);
+	this.setDimArea([x,y]);
+	this.creatArea();
+	snake = new Snake(rand(this.getDimArea()[0] * this.getDimArea()[1]));
+	this.appaPoint();
+	document.body.addEventListener('keydown', snake.choixDir);
 }
