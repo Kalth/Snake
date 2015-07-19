@@ -78,5 +78,20 @@ p {
   border-bottom: 6px dotted black;
 }
 
+.d1 {
+  border-left: 6px dotted black; 
+}
+
+.d2 {
+  border-top: 6px dotted black; 
+}
+
+.d3 {
+  border-right: 6px dotted black; 
+}
+
+.d4 {
+  border-bottom: 6px dotted black; 
+}
 
 /* http://lea.verou.me/2011/03/beveled-corners-negative-border-radius-with-css3-gradients/ */

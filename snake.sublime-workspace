@@ -4,8 +4,96 @@
 		"selected_items":
 		[
 			[
+				"ran",
+				"randSPoint"
+			],
+			[
+				"inde",
+				"indexFree"
+			],
+			[
+				"in",
+				"indexFree"
+			],
+			[
+				"ge",
+				"getTabIncu"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"getTab",
+				"getTabIncu"
+			],
+			[
+				"nbr",
+				"nbrePartSup"
+			],
+			[
+				"get",
+				"getTabIncu"
+			],
+			[
+				"ne",
+				"newVitMvt"
+			],
+			[
+				"va",
+				"variMvt"
+			],
+			[
+				"setIndexTab",
+				"setIndexTabPos"
+			],
+			[
+				"geti",
+				"getIndexTabIncu"
+			],
+			[
+				"setInd",
+				"setIndexTabPos"
+			],
+			[
+				"tr",
+				"Trouve"
+			],
+			[
+				"ra",
+				"randPosiAppPoint"
+			],
+			[
+				"att",
+				"attrTete"
+			],
+			[
 				"pos",
-				"posNaiss"
+				"posVoulu"
+			],
+			[
+				"e",
+				"echo"
+			],
+			[
+				"fi",
+				"firstPos"
+			],
+			[
+				"l",
+				"log"
+			],
+			[
+				"de",
+				"delete"
+			],
+			[
+				"super",
+				"superPointTimer"
+			],
+			[
+				"ti",
+				"timerSPoint"
 			],
 			[
 				"pus",
@@ -24,10 +112,6 @@
 				"setIndexTabPos"
 			],
 			[
-				"re",
-				"resetIndexTabIncu"
-			],
-			[
 				"t",
 				"this"
 			],
@@ -38,18 +122,6 @@
 			[
 				"getT",
 				"getTabPos"
-			],
-			[
-				"va",
-				"value"
-			],
-			[
-				"ge",
-				"getTabPos"
-			],
-			[
-				"get",
-				"getNbrePas"
 			],
 			[
 				"s",
@@ -128,10 +200,6 @@
 				"if	if"
 			],
 			[
-				"l",
-				"link"
-			],
-			[
 				"res",
 				"result"
 			],
@@ -192,10 +260,6 @@
 				"getIsAlive"
 			],
 			[
-				"fi",
-				"function"
-			],
-			[
 				"co",
 				"console"
 			],
@@ -248,10 +312,6 @@
 				"rgba()"
 			],
 			[
-				"in",
-				"input	Tag"
-			],
-			[
 				"inl",
 				"inline-block"
 			],
@@ -300,10 +360,6 @@
 				"htmlTag"
 			],
 			[
-				"e",
-				"else"
-			],
-			[
 				"le",
 				"length"
 			],
@@ -327,7 +383,7 @@
 			"file": "js/game.js",
 			"settings":
 			{
-				"buffer_size": 3579,
+				"buffer_size": 4178,
 				"line_ending": "Unix"
 			}
 		},
@@ -335,7 +391,31 @@
 			"file": "js/snake.js",
 			"settings":
 			{
-				"buffer_size": 7233,
+				"buffer_size": 7602,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/kalth/sites/snake/snakeVD.js",
+			"settings":
+			{
+				"buffer_size": 8970,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/kalth/sites/Projets/teste.html",
+			"settings":
+			{
+				"buffer_size": 384,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/main.js",
+			"settings":
+			{
+				"buffer_size": 461,
 				"line_ending": "Unix"
 			}
 		},
@@ -348,18 +428,34 @@
 			}
 		},
 		{
-			"file": "/home/kalth/sites/git/dossierSites/Dev/Java script/jeuxCanvas/js/utilities.js",
+			"file": "js/utilities.js",
 			"settings":
 			{
-				"buffer_size": 385,
+				"buffer_size": 386,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "js/utilities.js",
+			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 385,
+				"buffer_size": 768,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "css/snake.css",
+			"settings":
+			{
+				"buffer_size": 1185,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/kalth/sites/git/dossierSites/SnakeV1/index.html",
+			"settings":
+			{
+				"buffer_size": 745,
 				"line_ending": "Unix"
 			}
 		}
@@ -393,10 +489,17 @@
 	"file_history":
 	[
 		"/home/kalth/file",
+		"/home/kalth/sites/git/dossierSites/Dev/Php/PDO/index.php",
+		"/home/kalth/sites/git/dossierSites/Dev/Java script/jeuxCanvas/js/utilities.js",
+		"/home/kalth/sites/git/dossierSites/Dev/Php/helloWorld.php",
+		"/home/kalth/sites/git/dossierSites/Dev/Php/PDO/PDO.php",
+		"/home/kalth/file:/home/kalth/serv/conf/ssh2",
+		"/home/kalth/serv/conf/1ereConf/main.conf",
+		"/home/kalth/serv/conf/2emeConf/pub.conf",
+		"/home/kalth/serv/conf/2emeConf/main.conf",
 		"/home/kalth/sites/git/dossierSites/Dev/Java script/snake/snakeVD.js",
 		"/home/kalth/sites/git/dossierSites/Dev/Java script/jeuxCanvas/index.html",
 		"/home/kalth/sites/git/dossierSites/Dev/Java script/jeuxCanvas/css/game.css",
-		"/home/kalth/sites/git/dossierSites/Dev/Java script/jeuxCanvas/js/utilities.js",
 		"/home/kalth/sites/git/dossierSites/Dev/Java script/jeuxCanvas/js/character.js",
 		"/home/kalth/sites/git/dossierSites/Dev/Java script/jeuxCanvas/js/event.js",
 		"/home/kalth/sites/feuillesRecaJDR/jdr.js",
@@ -463,6 +566,8 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"resetIndexTabIncu",
+			"nouveaux",
 			"Math.round(Math.random() * ",
 			"varsGlobal.tabPosi[i]",
 			"varsGlobal.tabPosi.length",
@@ -524,7 +629,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -532,15 +637,15 @@
 					"file": "js/game.js",
 					"settings":
 					{
-						"buffer_size": 3579,
+						"buffer_size": 4178,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3298,
-								3298
+								3653,
+								3653
 							]
 						],
 						"settings":
@@ -549,7 +654,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 680.0,
+						"translation.y": 3936.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -559,15 +664,42 @@
 					"file": "js/snake.js",
 					"settings":
 					{
-						"buffer_size": 7233,
+						"buffer_size": 7602,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7229,
-								7229
+								7035,
+								7035
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 16.0,
+						"translation.y": 6720.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/kalth/sites/snake/snakeVD.js",
+					"settings":
+					{
+						"buffer_size": 8970,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8603,
+								8603
 							]
 						],
 						"settings":
@@ -576,13 +708,66 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 7008.0,
+						"translation.y": 11524.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 3,
+					"file": "/home/kalth/sites/Projets/teste.html",
+					"settings":
+					{
+						"buffer_size": 384,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								339,
+								339
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "js/main.js",
+					"settings":
+					{
+						"buffer_size": 461,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								354,
+								354
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
 					"settings":
 					{
 						"buffer_size": 433,
@@ -607,19 +792,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "/home/kalth/sites/git/dossierSites/Dev/Java script/jeuxCanvas/js/utilities.js",
+					"buffer": 6,
+					"file": "js/utilities.js",
 					"settings":
 					{
-						"buffer_size": 385,
+						"buffer_size": 386,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								126,
-								126
+								47,
+								47
 							]
 						],
 						"settings":
@@ -633,24 +818,82 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "js/utilities.js",
+					"buffer": 7,
+					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 385,
+						"buffer_size": 768,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								82,
-								82
+								758,
+								758
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "css/snake.css",
+					"settings":
+					{
+						"buffer_size": 1185,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								916,
+								916
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1728.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "/home/kalth/sites/git/dossierSites/SnakeV1/index.html",
+					"settings":
+					{
+						"buffer_size": 745,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								316,
+								316
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

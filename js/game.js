@@ -18,7 +18,7 @@ var Game = function(x ,y) {
 			dimArea = newDimArea;
 		} else {
 			console.log('dim area set par defaut');
-			dimArea = [10, 10];
+			dimArea = [20, 20];
 		}
 	};
 
@@ -29,6 +29,9 @@ var Game = function(x ,y) {
 	this.addScore = function(pts) {
 		if (typeof pts === 'number') {
 			score += pts;
+		}
+		else {
+			++score;
 		}
 	};
 
@@ -92,19 +95,15 @@ var Game = function(x ,y) {
 
 	this.scorePlus = function(pts) {
 		var affSco = document.getElementById('score');
-		this.addScore();
+		this.addScore(pts);
 		affSco.innerHTML = this.getScore() + ' pts';
 		this.appaPoint();
-		// En cas de super Point le serpent accelere
-		if (pts == 5) {
-			augVitesse();
-		}
-		// Si le score attein le palier diffSco le serpent accelere et le palier est augmenté
-		if (this.getScore() >= this.getDiffScore()) {
-			// a revoir!!!!!!!!!!
-			varsGlobal.diffSco += varsGlobal.diffSco + varsGlobal.sco / 2;
-			augVitesse();
-		}
+		// Calcul de la vitesse du snake en fonction du score
+		newVitMvt = 750 - (Math.log(this.getScore()) * 160);
+		if (newVitMvt < 150) {
+			newVitMvt = 150;
+		};
+		snake.setVitMvt(newVitMvt);
 	};
 
 	this.appaPoint = function() {
@@ -116,24 +115,21 @@ var Game = function(x ,y) {
 		} else {
 			var randSPoint = rand(10);
 		}
+		console.log('Super Point : ' + (randSPoint >= 5));
+		console.log(this.getSuperPointTimer());
 		while(true) {
 			randPosiAppPoint = rand(this.getDimArea()[0] * this.getDimArea()[1] - 1);
-			console.log(randPosiAppPoint);
-			console.log(rand(this.getDimArea[0] * this.getDimArea[1] - 1));
-			console.log(document.getElementsByClassName('col').length);
-			console.log('x : ' + this.getDimArea + ' y : ' + this.getDimArea[1])
-			console.log(document.getElementsByClassName('col')[randPosiAppPoint]);
 			attrCaseAppPoint = document.getElementsByClassName('col')[randPosiAppPoint].getAttribute('class');
 			if (attrCaseAppPoint === 'col' 
-				&& randSPoint <= 9) {
+				&& randSPoint <= 5) {
+				console.log('Pose un point normal');
 				document.getElementsByClassName('col')[randPosiAppPoint].setAttribute('class', 'col point');
 				break;
-			} else if (attrCaseAppPoint === 'col'
-				&& randSPoint === 10) {
+			} else if (attrCaseAppPoint === 'col') {
+				console.log('Pose un super point');
 				document.getElementsByClassName('col')[randPosiAppPoint].setAttribute('class', 'col sPoint');
 				this.setSuperPointTimer(true);
-				var _this = this;
-				setTimeout(_this.timerSPoint(randPosiAppPoint),10000);
+				setTimeout(this.timerSPoint(randPosiAppPoint),10000);
 				break;
 			}
 		}
@@ -141,20 +137,22 @@ var Game = function(x ,y) {
 
 	// Au bout de 10 seconde supprime le superPoint si il n'est pas pris, et permet al réapparition d'un nouveaux
 	this.timerSPoint = function(posiSuperPoint) {
-		this.setSuperPointTimer(false);
-		if (document.getElementsByClassName('col')[posiSuperPoint].getAttribute('class') === 'col sPoint') {
-			document.getElementsByClassName('col')[randPosiAppPoint].setAttribute('class', 'col');
-			this.appaPoint();
-		}
-		return;
+		_this = this;
+		setTimeout(function() {
+			_this.setSuperPointTimer(false);
+			if (document.getElementsByClassName('col')[posiSuperPoint].getAttribute('class') === 'col sPoint') {
+				document.getElementsByClassName('col')[posiSuperPoint].setAttribute('class', 'col');
+				_this.appaPoint();
+			}
+			return;
+		}, 10000)
 	};
 
 	// Initialisation
 	this.setIsRunning(true);
-	console.log(x + ' ' + y);
 	this.setDimArea([x,y]);
 	this.creatArea();
-	snake = new Snake(rand(this.getDimArea()[0] * this.getDimArea()[1]));
+	snake = new Snake(rand(this.getDimArea()[0] * this.getDimArea()[1]) - 1);
 	this.appaPoint();
 	document.body.addEventListener('keydown', snake.choixDir);
 }
