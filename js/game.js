@@ -1,8 +1,7 @@
-var Game = function(x ,y) {
+var Game = function (dimArea) {
 	var dimArea; // Collones et lignes de l'air de jeux
 	var score = 0; // Score du joueur
 	var superPointTimer = false; // Defini si un super point est deja sur le terrain
-	var diffScore = 4; // Palier a atteindre pour une augmentation de vitesse
 	var isRunning = false; // Le jeux est initialisé
 	var isPlaying = false; // Une partie est elle demaré
 	var snake;
@@ -12,12 +11,13 @@ var Game = function(x ,y) {
 	};
 
 	this.setDimArea = function(newDimArea) {
-		if (typeof newDimArea.constructor === Array 
-			&& typeof newDimArea[0] === 'number' 
-			&& typeof newDimArea[1] === 'number') {
+		if (newDimArea.constructor === Array 
+			&& (isNaN(newDimArea[0]) === false 
+				|| isNaN(newDimArea[1]) === false)
+			&& newDimArea[0] > 1
+			&& newDimArea[1] > 1) {
 			dimArea = newDimArea;
 		} else {
-			console.log('dim area set par defaut');
 			dimArea = [20, 20];
 		}
 	};
@@ -35,23 +35,19 @@ var Game = function(x ,y) {
 		}
 	};
 
-	this.getSuperPointTimer = function() {
-		return superPointTimer;
-	};
+	// this.getSuperPointTimer = function() {
+	// 	return superPointTimer;
+	// };
+
+
+	// Methode privé
+	// var superPointTimer = function() {
+
+		//};
 
 	this.setSuperPointTimer = function(state) {
 		if (typeof state === 'boolean') {
 			superPointTimer = state;
-		}
-	};
-
-	this.getDiffScore = function() {
-		return diffScore;
-	};
-
-	this.setDiffScore = function(newDiffScore) {
-		if (typeof newDiffScore === 'number') {
-			diffScore = newDiffScore;
 		}
 	};
 
@@ -100,8 +96,8 @@ var Game = function(x ,y) {
 		this.appaPoint();
 		// Calcul de la vitesse du snake en fonction du score
 		newVitMvt = 750 - (Math.log(this.getScore()) * 160);
-		if (newVitMvt < 150) {
-			newVitMvt = 150;
+		if (newVitMvt < 125) {
+			newVitMvt = 125;
 		};
 		snake.setVitMvt(newVitMvt);
 	};
@@ -109,24 +105,24 @@ var Game = function(x ,y) {
 	this.appaPoint = function() {
 		var randPosiAppPoint;
 		var attrCaseAppPoint;
-		if (this.getSnake().getTabPos().length <= 5 
-		|| this.getSuperPointTimer() === true) {
+		if (snake.getTabPosLength() <= 5 
+		|| superPointTimer === true) {
 			var randSPoint = 1;
 		} else {
-			var randSPoint = rand(10);
+			var randSPoint = rand(20);
 		}
-		console.log('Super Point : ' + (randSPoint >= 5));
-		console.log(this.getSuperPointTimer());
 		while(true) {
 			randPosiAppPoint = rand(this.getDimArea()[0] * this.getDimArea()[1] - 1);
 			attrCaseAppPoint = document.getElementsByClassName('col')[randPosiAppPoint].getAttribute('class');
-			if (attrCaseAppPoint === 'col' 
-				&& randSPoint <= 5) {
-				console.log('Pose un point normal');
+			if (snake.getTabPosLength() >= this.getDimArea()[0] * this.getDimArea()[1] - 1) {
+				this.addScore(snake.getTabPosLength());
+				gameOver(true);
+				break
+			} else if (attrCaseAppPoint === 'col' 
+				&& randSPoint <= 19) {
 				document.getElementsByClassName('col')[randPosiAppPoint].setAttribute('class', 'col point');
 				break;
 			} else if (attrCaseAppPoint === 'col') {
-				console.log('Pose un super point');
 				document.getElementsByClassName('col')[randPosiAppPoint].setAttribute('class', 'col sPoint');
 				this.setSuperPointTimer(true);
 				setTimeout(this.timerSPoint(randPosiAppPoint),10000);
@@ -150,9 +146,9 @@ var Game = function(x ,y) {
 
 	// Initialisation
 	this.setIsRunning(true);
-	this.setDimArea([x,y]);
+	this.setDimArea(dimArea);
 	this.creatArea();
-	snake = new Snake(rand(this.getDimArea()[0] * this.getDimArea()[1]) - 1);
+	snake = new Snake(rand(this.getDimArea()[0] * this.getDimArea()[1] - 2) + 1);
 	this.appaPoint();
 	document.body.addEventListener('keydown', snake.choixDir);
 }
