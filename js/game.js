@@ -2,8 +2,6 @@ var Game = function (dimArea) {
 	var dimArea; // Collones et lignes de l'air de jeux
 	var score = 0; // Score du joueur
 	var superPointTimer = false; // Defini si un super point est deja sur le terrain
-	var isRunning = false; // Le jeux est initialisé
-	var isPlaying = false; // Une partie est elle demaré
 	var snake;
 
 	this.getDimArea = function() {
@@ -35,39 +33,9 @@ var Game = function (dimArea) {
 		}
 	};
 
-	// this.getSuperPointTimer = function() {
-	// 	return superPointTimer;
-	// };
-
-
-	// Methode privé
-	// var superPointTimer = function() {
-
-		//};
-
 	this.setSuperPointTimer = function(state) {
 		if (typeof state === 'boolean') {
 			superPointTimer = state;
-		}
-	};
-
-	this.getIsRunning = function() {
-		return isRunning;
-	};
-
-	this.setIsRunning = function(state) {
-		if (typeof state === 'boolean') {
-			isRunning = state;
-		}
-	};
-
-	this.getIsPlaying = function() {
-		return isPlaying;
-	};
-
-	this.setIsPlaying = function(state) {
-		if (typeof state === 'boolean') {
-			isPlaying = state;
 		}
 	};
 
@@ -105,7 +73,7 @@ var Game = function (dimArea) {
 	this.appaPoint = function() {
 		var randPosiAppPoint;
 		var attrCaseAppPoint;
-		if (snake.getTabPosLength() <= 5 
+		if (snake.getAPosLength() <= 5 
 		|| superPointTimer === true) {
 			var randSPoint = 1;
 		} else {
@@ -114,8 +82,8 @@ var Game = function (dimArea) {
 		while(true) {
 			randPosiAppPoint = rand(this.getDimArea()[0] * this.getDimArea()[1] - 1);
 			attrCaseAppPoint = document.getElementsByClassName('col')[randPosiAppPoint].getAttribute('class');
-			if (snake.getTabPosLength() >= this.getDimArea()[0] * this.getDimArea()[1] - 1) {
-				this.addScore(snake.getTabPosLength());
+			if (snake.getAPosLength() >= this.getDimArea()[0] * this.getDimArea()[1] - 1) {
+				this.addScore(snake.getAPosLength());
 				gameOver(true);
 				break
 			} else if (attrCaseAppPoint === 'col' 
@@ -144,8 +112,21 @@ var Game = function (dimArea) {
 		}, 10000)
 	};
 
+	// GameOver
+	this.gameOver = function(victory) {
+		this.getSnake().clearTimeMvt();
+		if (victory === false) {
+			window.alert('Partie perdu \n score :' + this.getScore());
+		} else {
+			window.alert('Félicitation, partie complété! \n score :' + this.getScore());
+		}
+		for (var i in game) {
+			delete(game[i]);
+		}
+		document.getElementById('map-container').innerHTML = '';
+	};
+	
 	// Initialisation
-	this.setIsRunning(true);
 	this.setDimArea(dimArea);
 	this.creatArea();
 	snake = new Snake(rand(this.getDimArea()[0] * this.getDimArea()[1] - 2) + 1);

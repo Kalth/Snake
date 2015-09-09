@@ -4,22 +4,23 @@ var game;
 	document.getElementById('newGame').addEventListener('click', function() {
 		if (typeof game !== 'undefined' 
 			&& game['getIsPlaying'] !== undefined) {
-			gameOver(false);
+			console.log(game);
+			game.gameOver(false);
 		}
 		var x = parseInt(window.prompt('Combien de colonnes?(minimum 2)'));
 		var y = parseInt(window.prompt('Combien de lignes?(minimum 2)'));
 		game = new Game([x, y]);
+		//quad();
 	});
 })();
 
-function gameOver(victory) {
-	if (victory === false) {
-		window.alert('Partie perdu \n score :' + game.getScore());
-	} else {
-		window.alert('Félicitation, partie complété! \n score :' + game.getScore());
-	}
-	for (var i in game) {
-		delete(game[i]);
-	}
-	document.getElementById('map-container').innerHTML = '';
-}
+function quad() {
+	console.log('sa se lance');
+	console.log(document.getElementsByClassName('col').length);
+	for (var i = 0; i <= document.getElementsByClassName('col').length - 1; ++i) {
+		var msg = '<p>' + i + '</p>';
+		console.log(msg);
+		document.getElementsByClassName('col')[i].innerHTML = msg;
+	};
+	
+};
